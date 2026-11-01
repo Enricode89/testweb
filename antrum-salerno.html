@@ -214,7 +214,7 @@ footer{background:var(--panel);border-top:1px solid rgba(201,168,76,0.08);paddin
 }
 
 /* DISPONIBILITÀ (dati dal tracker Antrum: prenotazioni + calendari Airbnb e Booking) */
-.disp{background:var(--panel);padding:6rem 4rem;scroll-margin-top:60px}   /* "Prenota ora": il titolo non finisce sotto il menu */
+.disp{background:var(--panel);padding:4rem 4rem 6rem;scroll-margin-top:72px}   /* "Prenota ora": il titolo non finisce sotto il menu */
 .disp-head{text-align:center;margin-bottom:2.5rem}
 .disp-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.2}
 .disp-head h2 em{font-style:italic;color:var(--gold)}
@@ -250,7 +250,7 @@ footer{background:var(--panel);border-top:1px solid rgba(201,168,76,0.08);paddin
 .disp-ris select{background:var(--dark);color:var(--warm);border:1px solid var(--gold-border);border-radius:50px;padding:0.6rem 1rem;font-family:'Jost',sans-serif}
 .disp-stato{text-align:center;color:var(--stone);font-size:0.85rem;padding:2rem 0}
 @media(max-width:900px){
-  .disp{padding:4rem 1rem}
+  .disp{padding:2rem 1rem 4rem}
   .disp-mesi{grid-template-columns:1fr}
   .disp-mese+.disp-mese{display:none}
   .disp-ris{flex-direction:column;align-items:stretch;text-align:center}
@@ -449,17 +449,12 @@ footer{background:var(--panel);border-top:1px solid rgba(201,168,76,0.08);paddin
 </section>
 
 <section class="disp" id="disponibilita">
-  <div class="disp-head reveal">
-    <span class="eyebrow">Disponibilità</span>
-    <h2>Scegli le tue <em>date</em></h2>
-    <p>Calendario e prezzi aggiornati in tempo reale (prezzo a notte sotto ogni giorno). Tocca il giorno di arrivo e quello di partenza.</p>
-  </div>
   <div class="disp-box">
     <div class="disp-tabs" role="group" aria-label="Struttura">
       <button aria-pressed="true" onclick="dispStruttura('loft')">Antrum Loft</button>
       <button aria-pressed="false" onclick="dispStruttura('suite')">Antrum Suite</button>
     </div>
-    <div class="disp-nav"><button id="dispPrev" onclick="dispMese(-1)" aria-label="Mese precedente">&#8592;</button><span id="dispAgg">Caricamento…</span><button id="dispNext" onclick="dispMese(1)" aria-label="Mese successivo">&#8594;</button></div>
+    <div class="disp-nav"><button id="dispPrev" onclick="dispMese(-1)" aria-label="Mese precedente">&#8592;</button><span id="dispAgg"></span><button id="dispNext" onclick="dispMese(1)" aria-label="Mese successivo">&#8594;</button></div>
     <div class="disp-mesi" id="dispMesi"><div class="disp-stato">Caricamento del calendario…</div></div>
     <div class="disp-leg"><span><i style="background:rgba(245,240,232,0.08)"></i>Libero</span><span><i style="background:none;border:1px solid rgba(245,240,232,0.2)"></i>Occupato</span><span><i style="background:var(--gold)"></i>Le tue date</span></div>
     <div class="disp-ris" id="dispRis" hidden></div>
@@ -616,8 +611,8 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   window.dispStruttura=s=>{S.s=s;S.cin=S.cout=null;document.querySelectorAll('.disp-tabs button').forEach(b=>b.setAttribute('aria-pressed',b.textContent.toLowerCase().includes(s)));draw()};
   window.dispMese=d=>{S.off=Math.max(0,Math.min(11,S.off+(window.innerWidth<=900?d:d*2)));draw()};
   fetch(API).then(r=>r.json()).then(j=>{if(!j||!j.loft)throw 0;S.dati=j;
-    document.getElementById('dispAgg').textContent='Aggiornato '+new Date(j.aggiornato).toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});draw()})
-    .catch(()=>{S.err=true;document.getElementById('dispAgg').textContent='';draw()});
+    draw()})
+    .catch(()=>{S.err=true;draw()});
 })();
 </script>
 </body>
