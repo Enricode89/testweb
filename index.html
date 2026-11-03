@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Antrum Suite &amp; Loft · Loft nel Centro Storico di Salerno</title>
+<meta name="description" content="Antrum Loft e Antrum Suite: due loft con pareti in pietra viva e vasca idromassaggio privata nel centro storico di Salerno. Prenota direttamente, risposta entro un'ora.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://antrumloftandsuite.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Antrum Suite &amp; Loft">
+<meta property="og:title" content="Antrum Suite &amp; Loft · Centro Storico di Salerno">
+<meta property="og:description" content="Due loft esclusivi nel cuore del centro storico di Salerno, con pietra viva e vasca idromassaggio privata.">
+<meta property="og:url" content="https://antrumloftandsuite.com/">
+<meta property="og:image" content="https://antrumloftandsuite.com/foto-loft-01.jpg">
+<meta property="og:locale" content="it_IT">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Antrum Suite & Loft",
+  "description": "Due loft con pareti in pietra viva e vasca idromassaggio privata nel centro storico di Salerno.",
+  "url": "https://antrumloftandsuite.com/",
+  "image": ["https://antrumloftandsuite.com/foto-loft-01.jpg", "https://antrumloftandsuite.com/foto-suite-06.jpg"],
+  "telephone": "+393474428794",
+  "email": "Antrumloft@gmail.com",
+  "address": {"@type": "PostalAddress", "addressLocality": "Salerno", "addressRegion": "SA", "postalCode": "84121", "addressCountry": "IT"},
+  "priceRange": "€€",
+  "availableLanguage": ["it", "en", "fr", "de"],
+  "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": "Vasca idromassaggio privata", "value": true}]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+:root{
+  --dark:#141210;
+  --warm:#f5f0e8;
+  --gold:#c9a84c;
+  --stone:#8a7968;
+  --panel:#1e1a16;
+  --sage-text:#72b090;
+  --sage-bg:rgba(74,138,104,0.12);
+  --sage-border:rgba(74,138,104,0.3);
+  --sage-hover:#3d7a5a;
+  --gold-bg:rgba(201,168,76,0.1);
+  --gold-border:rgba(201,168,76,0.3);
+}
+body{background:var(--dark);color:var(--warm);font-family:'Jost',sans-serif;font-weight:300;overflow-x:hidden}
+
+/* BUTTONS */
+.btn-wa,.btn-mail{
+  display:inline-flex;align-items:center;justify-content:center;gap:0.6rem;
+  padding:0.85rem 2rem;border-radius:50px;
+  font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:400;
+  text-decoration:none;border:1px solid;cursor:pointer;
+  transition:all 0.35s ease;backdrop-filter:blur(8px);
+}
+.btn-wa{background:var(--sage-bg);color:var(--sage-text);border-color:var(--sage-border)}
+.btn-wa:hover{background:var(--sage-hover);color:#fff;border-color:var(--sage-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(61,122,90,0.25)}
+.btn-mail{background:var(--gold-bg);color:var(--gold);border-color:var(--gold-border)}
+.btn-mail:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.2)}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;justify-content:space-between;align-items:center;padding:1.2rem 3rem;background:rgba(20,18,16,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(201,168,76,0.1)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.7rem;letter-spacing:0.2em;color:var(--gold);font-weight:300}
+.logo span{color:var(--warm);font-style:italic;font-size:1rem;letter-spacing:0.1em;margin-left:0.4rem;vertical-align:middle}
+nav ul{list-style:none;display:flex;gap:2rem;align-items:center}
+nav a{text-decoration:none;color:rgba(245,240,232,0.55);font-size:0.72rem;letter-spacing:0.2em;text-transform:uppercase;transition:color 0.3s}
+nav a:hover{color:var(--gold)}
+.nav-cta{
+  background:transparent!important;color:var(--gold)!important;
+  border:1px solid var(--gold-border)!important;
+  padding:0.5rem 1.4rem;border-radius:50px;font-weight:400;
+  letter-spacing:0.15em;transition:all 0.3s!important;
+}
+.nav-cta:hover{background:var(--gold)!important;color:var(--dark)!important;border-color:var(--gold)!important}
+
+/* FLOAT */
+.float-group{position:fixed;bottom:2rem;right:2rem;z-index:300;display:flex;flex-direction:column;gap:0.6rem;align-items:flex-end}
+.float-btn{
+  display:flex;align-items:center;gap:0.6rem;
+  padding:0.7rem 1.4rem;border-radius:50px;
+  font-family:'Jost',sans-serif;font-size:0.68rem;letter-spacing:0.15em;text-transform:uppercase;
+  cursor:pointer;border:1px solid;text-decoration:none;transition:all 0.35s;
+  backdrop-filter:blur(16px);box-shadow:0 4px 20px rgba(0,0,0,0.35);
+}
+.float-wa{background:rgba(20,18,16,0.75);color:var(--sage-text);border-color:var(--sage-border)}
+.float-wa:hover{background:var(--sage-hover);color:#fff;border-color:var(--sage-hover);transform:translateY(-2px)}
+.float-mail{background:rgba(20,18,16,0.75);color:var(--gold);border-color:var(--gold-border)}
+.float-mail:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);transform:translateY(-2px)}
+
+/* HERO */
+.hero{height:100vh;position:relative;overflow:hidden}
+.hero-slides{display:flex;width:100%;height:100%;transition:transform 0.9s cubic-bezier(0.77,0,0.175,1)}
+.hero-slide{min-width:100%;height:100%;position:relative;flex-shrink:0}
+.hero-slide img{width:100%;height:100%;object-fit:cover;filter:brightness(0.38);transition:transform 7s ease}
+.hero-slide.active img{transform:scale(1.06)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(20,18,16,0.95) 0%,rgba(20,18,16,0.05) 50%,transparent 100%);pointer-events:none}
+.hero-content{position:absolute;bottom:0;left:0;right:0;padding:0 4rem 5rem;z-index:2}
+.hero-eyebrow{font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1.2rem;opacity:0;animation:fadeUp 0.8s 0.3s forwards}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1;margin-bottom:1rem;opacity:0;animation:fadeUp 0.8s 0.5s forwards}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{color:rgba(245,240,232,0.6);font-size:0.9rem;line-height:1.8;max-width:480px;margin-bottom:2.5rem;opacity:0;animation:fadeUp 0.8s 0.7s forwards}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp 0.8s 0.9s forwards}
+.hero-nav{position:absolute;bottom:3rem;right:4rem;z-index:3;display:flex;gap:0.5rem}
+.hero-dot{width:24px;height:2px;background:rgba(245,240,232,0.2);cursor:pointer;transition:all 0.3s;border:none}
+.hero-dot.active{background:var(--gold);width:40px}
+.slide-badge{position:absolute;top:6rem;right:4rem;z-index:3;background:rgba(20,18,16,0.65);backdrop-filter:blur(12px);border:1px solid rgba(201,168,76,0.18);padding:0.8rem 1.4rem;text-align:right}
+.slide-badge-label{font-size:0.6rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:0.2rem}
+.slide-badge-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--warm);font-weight:300}
+.slide-badge-stars{font-size:0.7rem;color:var(--gold);margin-top:0.2rem}
+
+/* INTRO */
+.intro{background:var(--dark);padding:6rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.eyebrow{font-size:0.65rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.intro h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem}
+.intro h2 em{font-style:italic;color:var(--gold)}
+.intro p{color:var(--stone);line-height:1.9;font-size:0.92rem;margin-bottom:1rem}
+.intro-stats{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2.5rem;border-top:1px solid rgba(201,168,76,0.12);padding-top:2rem}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1}
+.stat-label{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--stone);margin-top:0.3rem}
+.intro-img-col{position:relative}
+.intro-img-main{width:100%;aspect-ratio:3/4;object-fit:cover;display:block}
+.intro-img-float{position:absolute;bottom:-2rem;left:-2rem;width:55%;aspect-ratio:4/3;object-fit:cover;border:4px solid var(--dark);box-shadow:0 20px 60px rgba(0,0,0,0.5)}
+
+/* PROPERTIES */
+.properties{background:var(--panel);padding:6rem 0}
+.props-header{text-align:center;margin-bottom:4rem;padding:0 4rem}
+.props-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300}
+.props-header h2 em{font-style:italic;color:var(--gold)}
+.prop-card{display:grid;grid-template-columns:1fr 1fr;margin-bottom:3px;overflow:hidden}
+.prop-card:nth-child(even) .prop-gallery{order:2}
+.prop-card:nth-child(even) .prop-info{order:1}
+.prop-gallery{position:relative;overflow:hidden;height:560px}
+.prop-gallery-slides{display:flex;height:100%;transition:transform 0.7s cubic-bezier(0.77,0,0.175,1)}
+.prop-gallery-slide{min-width:100%;height:100%;flex-shrink:0}
+.prop-gallery-slide img{width:100%;height:100%;object-fit:cover;transition:transform 6s ease}
+.prop-gallery-slide.active img{transform:scale(1.04)}
+.gallery-arrows{position:absolute;bottom:1.5rem;right:1.5rem;display:flex;gap:0.4rem;z-index:2}
+.garrow{width:34px;height:34px;background:rgba(20,18,16,0.6);backdrop-filter:blur(8px);border:1px solid rgba(201,168,76,0.2);color:var(--gold);cursor:pointer;transition:all 0.3s;font-size:0.8rem;display:flex;align-items:center;justify-content:center;border-radius:50%}
+.garrow:hover{background:var(--gold);color:var(--dark)}
+.gallery-dots{position:absolute;bottom:1.5rem;left:1.5rem;display:flex;gap:4px;z-index:2}
+.gdot{width:16px;height:2px;background:rgba(245,240,232,0.25);cursor:pointer;border:none;transition:all 0.3s}
+.gdot.active{background:var(--gold);width:26px}
+.prop-info{background:var(--dark);padding:4rem 3.5rem;display:flex;flex-direction:column;justify-content:center}
+.prop-type{font-size:0.6rem;letter-spacing:0.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.prop-name{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:300;margin-bottom:0.5rem}
+.prop-name em{font-style:italic}
+.prop-rating{display:flex;align-items:center;gap:0.5rem;color:var(--gold);font-size:0.8rem;margin-bottom:1.5rem}
+.prop-rating span{color:var(--stone)}
+.prop-desc{color:var(--stone);line-height:1.9;font-size:0.88rem;margin-bottom:2rem}
+.prop-features{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:2.5rem;border-top:1px solid rgba(201,168,76,0.1);border-bottom:1px solid rgba(201,168,76,0.1);padding:1.5rem 0}
+.feat{display:flex;align-items:center;gap:0.7rem;font-size:0.8rem;color:rgba(245,240,232,0.6)}
+.prop-cta-group{display:flex;flex-direction:column;gap:0.7rem}
+
+/* GALLERY */
+.gallery-section{background:var(--dark);padding:6rem 0}
+.gallery-header{text-align:center;margin-bottom:3rem;padding:0 4rem}
+.gallery-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300}
+.gallery-header h2 em{font-style:italic;color:var(--gold)}
+.gallery-strip{display:flex;gap:3px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:0 4rem}
+.gallery-strip::-webkit-scrollbar{display:none}
+.gallery-strip-item{flex-shrink:0;width:340px;height:420px;scroll-snap-align:start;overflow:hidden;cursor:pointer;position:relative}
+.gallery-strip-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.6s,filter 0.4s;filter:brightness(0.75)}
+.gallery-strip-item:hover img{transform:scale(1.06);filter:brightness(1)}
+.gitem-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(20,18,16,0.9));padding:2rem 1.2rem 1rem;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(245,240,232,0.7);opacity:0;transition:opacity 0.3s}
+.gallery-strip-item:hover .gitem-label{opacity:1}
+
+/* AMENITIES */
+.amenities{background:var(--panel);padding:6rem 4rem}
+.amenities-header{text-align:center;margin-bottom:3rem}
+.amenities-header h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300}
+.amenities-header h2 em{font-style:italic;color:var(--gold)}
+.amen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,0.06)}
+.amen-item{background:var(--dark);padding:2.5rem 2rem;transition:background 0.3s}
+.amen-item:hover{background:rgba(201,168,76,0.03)}
+.amen-icon{font-size:1.5rem;margin-bottom:1rem}
+.amen-name{font-size:0.78rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;color:var(--warm)}
+.amen-desc{font-size:0.78rem;color:var(--stone);line-height:1.6}
+
+/* CONTACT */
+.contact-section{background:var(--dark);padding:6rem 4rem}
+.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
+.contact-info h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;margin-bottom:1.5rem}
+.contact-info h2 em{font-style:italic;color:var(--gold)}
+.contact-info p{color:var(--stone);line-height:1.9;font-size:0.9rem;margin-bottom:2rem}
+.contact-items{display:flex;flex-direction:column;gap:1.2rem}
+.ci{display:flex;align-items:flex-start;gap:1rem}
+.ci-icon{width:38px;height:38px;border:1px solid rgba(201,168,76,0.18);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:0.9rem;flex-shrink:0}
+.ci-label{font-size:0.65rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone);margin-bottom:0.2rem}
+.ci-value{color:var(--warm);font-size:0.9rem}
+.contact-cta-box{background:var(--panel);border:1px solid rgba(201,168,76,0.1);padding:3rem;display:flex;flex-direction:column;gap:1rem}
+.contact-cta-title{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;margin-bottom:0.3rem}
+.contact-cta-title em{font-style:italic;color:var(--gold)}
+.contact-cta-sub{color:var(--stone);font-size:0.85rem;line-height:1.7;margin-bottom:0.5rem}
+.cta-big{
+  display:flex;align-items:center;justify-content:center;gap:0.8rem;
+  padding:1rem 2rem;border-radius:50px;
+  font-family:'Jost',sans-serif;font-size:0.78rem;letter-spacing:0.18em;text-transform:uppercase;font-weight:400;
+  text-decoration:none;border:1px solid;cursor:pointer;transition:all 0.35s;
+}
+.cta-big-wa{background:var(--sage-bg);color:var(--sage-text);border-color:var(--sage-border)}
+.cta-big-wa:hover{background:var(--sage-hover);color:#fff;border-color:var(--sage-hover);transform:translateY(-2px);box-shadow:0 8px 24px rgba(61,122,90,0.2)}
+.cta-big-mail{background:var(--gold-bg);color:var(--gold);border-color:var(--gold-border)}
+.cta-big-mail:hover{background:var(--gold);color:var(--dark);border-color:var(--gold);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,0.2)}
+.cta-divider{text-align:center;color:var(--stone);font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;position:relative}
+.cta-divider::before,.cta-divider::after{content:'';position:absolute;top:50%;width:35%;height:1px;background:rgba(201,168,76,0.08)}
+.cta-divider::before{left:0}.cta-divider::after{right:0}
+.response-note{text-align:center;font-size:0.7rem;color:var(--stone);display:flex;align-items:center;justify-content:center;gap:0.5rem}
+.rn-dot{width:5px;height:5px;border-radius:50%;background:#4a8a68;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+
+footer{background:var(--panel);border-top:1px solid rgba(201,168,76,0.08);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--gold);font-weight:300;letter-spacing:0.2em}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{color:var(--stone);text-decoration:none;font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{color:var(--stone);font-size:0.72rem}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity 0.8s ease,transform 0.8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:900px){
+  nav ul{display:none}
+  .hero-content{padding:0 2rem 4rem}
+  .intro,.contact-layout{grid-template-columns:1fr}
+  .prop-card{grid-template-columns:1fr}
+  .prop-card:nth-child(even) .prop-gallery,.prop-card:nth-child(even) .prop-info{order:0}
+  .amen-grid{grid-template-columns:1fr 1fr}
+  footer{flex-direction:column;text-align:center}
+  .intro-img-float{display:none}
+  section{padding:4rem 1.5rem}
+  .properties{padding:4rem 0}
+  .prop-info{padding:2.5rem 1.5rem}
+  .slide-badge{display:none}
+  .float-group{bottom:1rem;right:1rem}
+  .float-btn span:not(.float-icon){display:none}
+  .float-btn{padding:0.8rem}
+}
+
+/* DISPONIBILITÀ (dati dal tracker Antrum: prenotazioni + calendari Airbnb e Booking) */
+.disp{background:var(--panel);padding:4rem 4rem 6rem;scroll-margin-top:72px}   /* "Prenota ora": il titolo non finisce sotto il menu */
+.disp-head{text-align:center;margin-bottom:2.5rem}
+.disp-head h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:300;line-height:1.2}
+.disp-head h2 em{font-style:italic;color:var(--gold)}
+.disp-head p{color:var(--stone);font-size:0.9rem;margin-top:1rem}
+.disp-box{max-width:820px;margin:0 auto}
+.disp-tabs{display:flex;justify-content:center;gap:0.6rem;margin-bottom:1.6rem}
+.disp-tabs button{background:none;border:1px solid var(--gold-border);color:var(--warm);font-family:'Jost',sans-serif;font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;padding:0.7rem 1.6rem;border-radius:50px;cursor:pointer}
+.disp-tabs button[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--dark);font-weight:500}
+.disp-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem}
+.disp-nav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--gold-border);background:none;color:var(--gold);font-size:1.1rem;cursor:pointer}
+.disp-nav button:disabled{opacity:.25;cursor:default}
+.disp-nav span{font-size:0.7rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--stone)}
+.disp-mesi{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem}
+.disp-mese h4{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:1.4rem;text-align:center;margin-bottom:0.8rem;text-transform:capitalize}
+.disp-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.disp-grid .dw{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--stone);text-align:center;padding-bottom:4px}
+.disp-grid button{aspect-ratio:1;line-height:1.1;border:0;border-radius:8px;background:rgba(245,240,232,0.04);color:var(--warm);font-family:'Jost',sans-serif;font-size:0.9rem;cursor:pointer;position:relative}
+.disp-grid button:hover:not(:disabled){outline:1px solid var(--gold)}
+.disp-grid button small{display:block;font-size:0.58rem;color:var(--stone);margin-top:1px;letter-spacing:0.02em}
+.disp-grid button.sel small{color:var(--dark)}
+.disp-grid button.occ{background:none;color:rgba(245,240,232,0.22);text-decoration:line-through;cursor:not-allowed}
+.disp-grid button.pass{background:none;color:rgba(245,240,232,0.15);cursor:default}
+.disp-grid button.sel{background:var(--gold);color:var(--dark);font-weight:500}
+.disp-grid button.mid{background:var(--gold-bg);color:var(--warm)}
+.disp-grid button.solo-out{background:rgba(245,240,232,0.04);color:var(--warm);text-decoration:none}
+.disp-leg{display:flex;justify-content:center;gap:1.6rem;margin-top:1.4rem;font-size:0.72rem;color:var(--stone)}
+.disp-leg i{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px}
+.disp-ris{margin-top:2rem;border:1px solid var(--gold-border);border-radius:16px;padding:1.4rem 1.6rem;display:flex;align-items:center;justify-content:space-between;gap:1.2rem;flex-wrap:wrap}
+.disp-ris[hidden]{display:none}
+.disp-ris .t{font-family:'Cormorant Garamond',serif;font-size:1.5rem}
+.disp-ris .s{color:var(--stone);font-size:0.85rem;margin-top:0.2rem}
+.disp-ris input{background:var(--dark);color:var(--warm);border:1px solid var(--gold-border);border-radius:50px;padding:0.6rem 1rem;font-family:'Jost',sans-serif;font-size:16px;min-width:0}
+.disp-ris select{background:var(--dark);color:var(--warm);border:1px solid var(--gold-border);border-radius:50px;padding:0.6rem 1rem;font-family:'Jost',sans-serif}
+.disp-stato{text-align:center;color:var(--stone);font-size:0.85rem;padding:2rem 0}
+@media(max-width:900px){
+  .disp{padding:2rem 1rem 4rem}
+  .disp-mesi{grid-template-columns:1fr}
+  .disp-mese+.disp-mese{display:none}
+  .disp-ris{flex-direction:column;align-items:stretch;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center;gap:1rem 1.6rem}   /* prima uscivano dallo schermo sul telefono */
+  .amenities{padding:4rem 1rem}.amen-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.amen-item{padding:1.6rem 1rem}   /* servizi: niente scorrimento laterale */
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">ANTRUM <span>Suite &amp; Loft</span></div>
+  <ul>
+    <li><a href="#strutture">Le Strutture</a></li>
+    <li><a href="#galleria">Galleria</a></li>
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#disponibilita" class="nav-cta">Prenota ora</a></li>
+  </ul>
+</nav>
+
+<div class="float-group">
+  <a href="https://wa.me/393474428794?text=Ciao! Vorrei prenotare un soggiorno ad Antrum Suite %26 Loft a Salerno. Potete darmi informazioni sulle disponibilita?" target="_blank" class="float-btn float-wa">
+    <span class="float-icon">💬</span><span>WhatsApp</span>
+  </a>
+  <a href="mailto:Antrumloft@gmail.com?subject=Prenotazione Antrum Suite e Loft" class="float-btn float-mail">
+    <span class="float-icon">✉️</span><span>Email</span>
+  </a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-slides" id="heroSlides">
+    <div class="hero-slide active"><img src="foto-loft-01.jpg" alt="Antrum Loft"><div class="hero-overlay"></div><div class="slide-badge"><span class="slide-badge-label">Centro Storico · Salerno</span><div class="slide-badge-name">Antrum Loft</div><div class="slide-badge-stars">★ 4,87 · 275 recensioni</div></div></div>
+    <div class="hero-slide"><img src="foto-loft-04.jpg" alt="Antrum Loft"><div class="hero-overlay"></div><div class="slide-badge"><span class="slide-badge-label">Pietra viva · Industrial Chic</span><div class="slide-badge-name">Antrum Loft</div><div class="slide-badge-stars">Vasca idromassaggio privata</div></div></div>
+    <div class="hero-slide"><img src="foto-loft-03.jpg" alt="Antrum Loft"><div class="hero-overlay"></div><div class="slide-badge"><span class="slide-badge-label">Travi a vista · Pietra viva</span><div class="slide-badge-name">Antrum Loft</div><div class="slide-badge-stars">Cucina e zona pranzo</div></div></div>
+    <div class="hero-slide"><img src="foto-suite-01.jpg" alt="Antrum Suite"><div class="hero-overlay"></div><div class="slide-badge"><span class="slide-badge-label">Top 5% su Airbnb</span><div class="slide-badge-name">Antrum Suite</div><div class="slide-badge-stars">★ 5,0 · 23 recensioni</div></div></div>
+    <div class="hero-slide"><img src="foto-suite-03.jpg" alt="Antrum Suite"><div class="hero-overlay"></div><div class="slide-badge"><span class="slide-badge-label">Open Space 43 mq</span><div class="slide-badge-name">Antrum Suite</div><div class="slide-badge-stars">Jacuzzi con luce LED</div></div></div>
+    <div class="hero-slide"><img src="foto-suite-06.jpg" alt="Antrum Suite"><div class="hero-overlay"></div><div class="slide-badge"><span class="slide-badge-label">Centro Storico · Salerno</span><div class="slide-badge-name">Antrum Suite</div><div class="slide-badge-stars">Open space con cucina</div></div></div>
+  </div>
+  <script>(function(){var c=document.getElementById('heroSlides'),k=[].slice.call(c.children);for(var i=k.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=k[i];k[i]=k[j];k[j]=t}k.forEach(function(e,i){e.classList.toggle('active',i===0);c.appendChild(e)})})();</script>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Centro Storico di Salerno · Superhost</span>
+    <h1 class="hero-title">L'antico incontra<br>il <em>lusso moderno</em></h1>
+    <p class="hero-sub">Due loft esclusivi nel cuore del centro storico di Salerno. Pareti in pietra viva, vasca idromassaggio privata e ogni comfort per un soggiorno indimenticabile.</p>
+    <div class="hero-actions">
+      <a href="#disponibilita" class="btn-wa">Prenota</a>
+      <a href="mailto:Antrumloft@gmail.com?subject=Prenotazione Antrum Suite e Loft" class="btn-mail">✉️ Scrivi una Email</a>
+    </div>
+  </div>
+  <div class="hero-nav" id="heroDots"></div>
+</section>
+
+<section class="intro reveal">
+  <div>
+    <span class="eyebrow">La nostra storia</span>
+    <h2>Due fratelli,<br>una <em>passione</em><br>per l'ospitalità</h2>
+    <p>Siamo due giovani fratelli salernitani che hanno trasformato due spazi storici nel cuore della città in rifugi di lusso unici. Ogni dettaglio è curato con amore per offrire un'esperienza che va oltre il semplice soggiorno.</p>
+    <p>Pareti in pietra viva che raccontano secoli di storia, comfort contemporaneo e un'accoglienza personale che ti farà sentire meglio che a casa.</p>
+    <div class="intro-stats">
+      <div><div class="stat-num">4.9</div><div class="stat-label">Valutazione media</div></div>
+      <div><div class="stat-num">298</div><div class="stat-label">Recensioni totali</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Tasso di risposta</div></div>
+      <div><div class="stat-num">5★</div><div class="stat-label">Superhost Airbnb</div></div>
+    </div>
+  </div>
+  <div class="intro-img-col">
+    <img src="foto-suite-05.jpg" alt="Relax" class="intro-img-main">
+    <img src="foto-ingresso.jpg" alt="Ingresso" class="intro-img-float">
+  </div>
+</section>
+
+<section class="properties" id="strutture">
+  <div class="props-header reveal">
+    <span class="eyebrow">Le Nostre Strutture</span>
+    <h2>Due esperienze,<br>un'unica <em>anima</em></h2>
+  </div>
+  <div class="prop-card reveal">
+    <div class="prop-gallery">
+      <div class="prop-gallery-slides" id="loftSlides">
+        <div class="prop-gallery-slide active"><img src="foto-loft-01.jpg" alt="Antrum Loft · Camera" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-02.jpg" alt="Antrum Loft · Camera e cucina" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-03.jpg" alt="Antrum Loft · Zona pranzo e TV" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-04.jpg" alt="Antrum Loft · Vasca idromassaggio" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-05.jpg" alt="Antrum Loft · Vasca idromassaggio" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-06.jpg" alt="Antrum Loft · Camera da letto" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-07.jpg" alt="Antrum Loft · Camera da letto" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-08.jpg" alt="Antrum Loft · Camera e vasca" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-09.jpg" alt="Antrum Loft · Cucina" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-10.jpg" alt="Antrum Loft · Cucina" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-11.jpg" alt="Antrum Loft · Bagno" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-12.jpg" alt="Antrum Loft · Doccia" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-loft-13.jpg" alt="Antrum Loft · Bagno" loading="lazy"></div>
+      </div>
+      <div class="gallery-dots" id="loftDots"></div>
+      <div class="gallery-arrows"><button class="garrow" onclick="prevSlide('loft')">&#8592;</button><button class="garrow" onclick="nextSlide('loft')">&#8594;</button></div>
+    </div>
+    <div class="prop-info">
+      <span class="prop-type">Loft · Centro Storico · 2 ospiti</span>
+      <h3 class="prop-name">Antrum <em>Loft</em></h3>
+      <div class="prop-rating">★★★★★ 4,87 <span>· 275 recensioni · Superhost</span></div>
+      <p class="prop-desc">Un loft con ingresso indipendente completamente ristrutturato, progettato per esaltare il contrasto tra antico e moderno. Pareti in pietra viva e travi a vista si fondono in uno stile industrial chic. La vasca idromassaggio incastonata in un arco ai piedi del letto è il cuore pulsante di questo spazio unico.</p>
+      <div class="prop-features">
+        <div class="feat"><span>🛁</span> Vasca idromassaggio</div>
+        <div class="feat"><span>📶</span> WiFi 718 Mbps</div>
+        <div class="feat"><span>📺</span> Smart TV 50"</div>
+        <div class="feat"><span>🔑</span> Self check-in</div>
+        <div class="feat"><span>🍳</span> Cucina completa</div>
+        <div class="feat"><span>🅿️</span> Parcheggio gratuito</div>
+        <div class="feat"><span>☕</span> Macchina caffè</div>
+        <div class="feat"><span>🏖️</span> Accesso spiaggia</div>
+      </div>
+      <div class="prop-cta-group">
+        <a href="#disponibilita" class="btn-wa" onclick="dispStruttura('loft')">Prenota</a>
+        <a href="mailto:Antrumloft@gmail.com?subject=Prenotazione Antrum Loft" class="btn-mail">✉️ Scrivi Email</a>
+      </div>
+    </div>
+  </div>
+  <div class="prop-card reveal">
+    <div class="prop-gallery">
+      <div class="prop-gallery-slides" id="suiteSlides">
+        <div class="prop-gallery-slide active"><img src="foto-suite-01.jpg" alt="Antrum Suite · Camera e jacuzzi" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-02.jpg" alt="Antrum Suite · Camera da letto" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-03.jpg" alt="Antrum Suite · Jacuzzi LED" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-04.jpg" alt="Antrum Suite · Jacuzzi" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-05.jpg" alt="Antrum Suite · Angolo relax" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-06.jpg" alt="Antrum Suite · Open space" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-07.jpg" alt="Antrum Suite · Cucina con penisola" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-08.jpg" alt="Antrum Suite · Cucina" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-09.jpg" alt="Antrum Suite · Bagno" loading="lazy"></div>
+        <div class="prop-gallery-slide"><img src="foto-suite-10.jpg" alt="Antrum Suite · Bagno" loading="lazy"></div>
+      </div>
+      <div class="gallery-dots" id="suiteDots"></div>
+      <div class="gallery-arrows"><button class="garrow" onclick="prevSlide('suite')">&#8592;</button><button class="garrow" onclick="nextSlide('suite')">&#8594;</button></div>
+    </div>
+    <div class="prop-info">
+      <span class="prop-type">Suite · Open Space 43 mq · 2 ospiti</span>
+      <h3 class="prop-name">Antrum <em>Suite</em></h3>
+      <div class="prop-rating">★★★★★ 5,0 <span>· 23 recensioni · Top 5% Airbnb</span></div>
+      <p class="prop-desc">Un open space di 43 mq al piano rialzato, con ingresso indipendente e self check-in. Mix perfetto di comfort, stile e funzionalità: letto matrimoniale, jacuzzi per due con luce LED, angolo relax con poltrone, cucina con penisola e bagno moderno. La Smart TV da 50" è visibile da ogni angolo.</p>
+      <div class="prop-features">
+        <div class="feat"><span>🛁</span> Jacuzzi LED per 2</div>
+        <div class="feat"><span>📶</span> WiFi 255 Mbps</div>
+        <div class="feat"><span>📺</span> Smart TV 50"</div>
+        <div class="feat"><span>🔑</span> Self check-in</div>
+        <div class="feat"><span>🍳</span> Cucina con penisola</div>
+        <div class="feat"><span>🌊</span> Vista lungomare</div>
+        <div class="feat"><span>💼</span> Zona lavoro</div>
+        <div class="feat"><span>🏆</span> Top 5% Airbnb</div>
+      </div>
+      <div class="prop-cta-group">
+        <a href="#disponibilita" class="btn-wa" onclick="dispStruttura('suite')">Prenota</a>
+        <a href="mailto:Antrumloft@gmail.com?subject=Prenotazione Antrum Suite" class="btn-mail">✉️ Scrivi Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section" id="galleria">
+  <div class="gallery-header reveal">
+    <span class="eyebrow">La Galleria</span>
+    <h2>Ogni angolo racconta<br>una <em>storia</em></h2>
+  </div>
+  <div class="gallery-strip" id="galStrip">
+    <div class="gallery-strip-item"><img src="foto-loft-01.jpg" alt="Antrum Loft · Camera da letto" loading="lazy"><div class="gitem-label">Antrum Loft · Camera da letto</div></div>
+    <div class="gallery-strip-item"><img src="foto-loft-03.jpg" alt="Antrum Loft · Zona pranzo" loading="lazy"><div class="gitem-label">Antrum Loft · Zona pranzo</div></div>
+    <div class="gallery-strip-item"><img src="foto-loft-04.jpg" alt="Antrum Loft · Vasca idromassaggio" loading="lazy"><div class="gitem-label">Antrum Loft · Vasca idromassaggio</div></div>
+    <div class="gallery-strip-item"><img src="foto-loft-09.jpg" alt="Antrum Loft · Cucina" loading="lazy"><div class="gitem-label">Antrum Loft · Cucina</div></div>
+    <div class="gallery-strip-item"><img src="foto-loft-02.jpg" alt="Antrum Loft · Panoramica" loading="lazy"><div class="gitem-label">Antrum Loft · Panoramica</div></div>
+    <div class="gallery-strip-item"><img src="foto-loft-11.jpg" alt="Antrum Loft · Bagno" loading="lazy"><div class="gitem-label">Antrum Loft · Bagno</div></div>
+    <div class="gallery-strip-item"><img src="foto-suite-01.jpg" alt="Antrum Suite · Panoramica" loading="lazy"><div class="gitem-label">Antrum Suite · Panoramica</div></div>
+    <div class="gallery-strip-item"><img src="foto-suite-03.jpg" alt="Antrum Suite · Jacuzzi LED" loading="lazy"><div class="gitem-label">Antrum Suite · Jacuzzi LED</div></div>
+    <div class="gallery-strip-item"><img src="foto-suite-06.jpg" alt="Antrum Suite · Open space" loading="lazy"><div class="gitem-label">Antrum Suite · Open space</div></div>
+    <div class="gallery-strip-item"><img src="foto-suite-02.jpg" alt="Antrum Suite · Camera da letto" loading="lazy"><div class="gitem-label">Antrum Suite · Camera da letto</div></div>
+    <div class="gallery-strip-item"><img src="foto-suite-07.jpg" alt="Antrum Suite · Cucina" loading="lazy"><div class="gitem-label">Antrum Suite · Cucina</div></div>
+    <div class="gallery-strip-item"><img src="foto-suite-09.jpg" alt="Antrum Suite · Bagno" loading="lazy"><div class="gitem-label">Antrum Suite · Bagno</div></div>
+  </div>
+  <script>(function(){var c=document.getElementById('galStrip'),k=[].slice.call(c.children);for(var i=k.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=k[i];k[i]=k[j];k[j]=t}k.forEach(function(e,i){e.classList.toggle('active',i===0);c.appendChild(e)})})();</script>
+
+  <p style="text-align:center;padding:1.5rem 4rem 0;font-size:0.65rem;letter-spacing:0.25em;text-transform:uppercase;color:var(--stone)">← Scorri per vedere di più →</p>
+</section>
+
+<section class="amenities" id="servizi">
+  <div class="amenities-header reveal">
+    <span class="eyebrow">I Nostri Servizi</span>
+    <h2>Ogni comfort,<br><em>pensato per te</em></h2>
+  </div>
+  <div class="amen-grid reveal">
+    <div class="amen-item"><div class="amen-icon">🛁</div><div class="amen-name">Vasca Idromassaggio</div><div class="amen-desc">Jacuzzi privata in camera, in entrambe le strutture</div></div>
+    <div class="amen-item"><div class="amen-icon">📶</div><div class="amen-name">WiFi Ultra Veloce</div><div class="amen-desc">Fibra ottica fino a 718 Mbps, ideale per smart working</div></div>
+    <div class="amen-item"><div class="amen-icon">🔑</div><div class="amen-name">Self Check-in</div><div class="amen-desc">Accesso autonomo 24h con Smart Lock o cassetta sicurezza</div></div>
+    <div class="amen-item"><div class="amen-icon">📍</div><div class="amen-name">Posizione Centrale</div><div class="amen-desc">Nel cuore del centro storico, vicino al Duomo e al mare</div></div>
+    <div class="amen-item"><div class="amen-icon">📺</div><div class="amen-name">Smart TV 50"</div><div class="amen-desc">Televisore da 50 pollici con streaming da ogni angolo</div></div>
+    <div class="amen-item"><div class="amen-icon">🍳</div><div class="amen-name">Cucina Completa</div><div class="amen-desc">Forno, piano cottura, frigorifero e macchina caffè</div></div>
+    <div class="amen-item"><div class="amen-icon">🅿️</div><div class="amen-name">Parcheggio</div><div class="amen-desc">Parcheggio gratuito in strada nelle vicinanze</div></div>
+    <div class="amen-item"><div class="amen-icon">🏖️</div><div class="amen-name">Vicino al Mare</div><div class="amen-desc">A pochi passi dal lungomare e dalla Costiera Amalfitana</div></div>
+  </div>
+</section>
+
+<section class="disp" id="disponibilita">
+  <div class="disp-box">
+    <div class="disp-tabs" role="group" aria-label="Struttura">
+      <button aria-pressed="true" onclick="dispStruttura('loft')">Antrum Loft</button>
+      <button aria-pressed="false" onclick="dispStruttura('suite')">Antrum Suite</button>
+    </div>
+    <div class="disp-nav"><button id="dispPrev" onclick="dispMese(-1)" aria-label="Mese precedente">&#8592;</button><span id="dispAgg"></span><button id="dispNext" onclick="dispMese(1)" aria-label="Mese successivo">&#8594;</button></div>
+    <div class="disp-mesi" id="dispMesi"><div class="disp-stato">Caricamento del calendario…</div></div>
+    <div class="disp-leg"><span><i style="background:rgba(245,240,232,0.08)"></i>Libero</span><span><i style="background:none;border:1px solid rgba(245,240,232,0.2)"></i>Occupato</span><span><i style="background:var(--gold)"></i>Le tue date</span></div>
+    <div class="disp-ris" id="dispRis" hidden></div>
+  </div>
+</section>
+
+<section class="contact-section" id="contatti">
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <span class="eyebrow">Contatti</span>
+      <h2>Siamo qui<br>per <em>te</em></h2>
+      <p>Rispondiamo entro un'ora su WhatsApp e via email. Scrivici per verificare la disponibilità o per qualsiasi richiesta speciale.</p>
+      <div class="contact-items">
+        <div class="ci"><div class="ci-icon">📍</div><div><div class="ci-label">Posizione</div><div class="ci-value">Centro Storico, Salerno (SA)</div></div></div>
+        <div class="ci"><div class="ci-icon">💬</div><div><div class="ci-label">WhatsApp</div><div class="ci-value">+39 347 442 8794</div></div></div>
+        <div class="ci"><div class="ci-icon">✉️</div><div><div class="ci-label">Email</div><div class="ci-value">Antrumloft@gmail.com</div></div></div>
+        <div class="ci"><div class="ci-icon">🌍</div><div><div class="ci-label">Lingue</div><div class="ci-value">Italiano · English · Français · Deutsch</div></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-cta-box">
+        <div class="contact-cta-title">Prenota il tuo<br><em>soggiorno</em></div>
+        <p class="contact-cta-sub">Disponibili 7 giorni su 7. Risposta garantita entro 1 ora.</p>
+        <a href="https://wa.me/393474428794?text=Ciao! Vorrei prenotare un soggiorno ad Antrum Suite %26 Loft a Salerno. Potete darmi informazioni sulle disponibilita?" target="_blank" class="cta-big cta-big-wa">💬 &nbsp; Scrivici su WhatsApp</a>
+        <div class="cta-divider">oppure</div>
+        <a href="mailto:Antrumloft@gmail.com?subject=Prenotazione Antrum Suite e Loft&body=Ciao! Vorrei prenotare un soggiorno.%0A%0AStruttura: %0ACheck-in: %0ACheck-out: %0ANome: %0ATelefono: " class="cta-big cta-big-mail">✉️ &nbsp; Invia una Email</a>
+        <div class="response-note"><span class="rn-dot"></span> Risposta media entro 1 ora · 100% tasso di risposta</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">ANTRUM Suite &amp; Loft</div>
+  <div class="footer-links">
+    <a href="#strutture">Strutture</a>
+    <a href="#galleria">Galleria</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#contatti">Contatti</a>
+  </div>
+  <div class="footer-copy">© 2026 Antrum Suite &amp; Loft · Salerno</div>
+</footer>
+
+<script>
+const heroSlidesEl=document.querySelectorAll('.hero-slide');
+const heroDotsEl=document.getElementById('heroDots');
+let heroIdx=0;
+heroSlidesEl.forEach((_,i)=>{
+  const d=document.createElement('button');
+  d.className='hero-dot'+(i===0?' active':'');
+  d.onclick=()=>goHero(i);heroDotsEl.appendChild(d);
+});
+function goHero(n){
+  heroSlidesEl[heroIdx].classList.remove('active');
+  heroDotsEl.children[heroIdx].classList.remove('active');
+  heroIdx=(n+heroSlidesEl.length)%heroSlidesEl.length;
+  document.getElementById('heroSlides').style.transform=`translateX(-${heroIdx*100}%)`;
+  heroSlidesEl[heroIdx].classList.add('active');
+  heroDotsEl.children[heroIdx].classList.add('active');
+}
+setInterval(()=>goHero(heroIdx+1),5000);
+const gals={loft:{idx:0},suite:{idx:0}};
+function initGal(name,dotsId){
+  const slides=document.getElementById(name+'Slides').children;
+  const dotsC=document.getElementById(dotsId);
+  gals[name].slides=slides;gals[name].dots=dotsC;
+  Array.from(slides).forEach((_,i)=>{
+    const d=document.createElement('button');
+    d.className='gdot'+(i===0?' active':'');
+    d.onclick=()=>goGal(name,i);dotsC.appendChild(d);
+  });
+  setInterval(()=>goGal(name,gals[name].idx+1),name==='loft'?4200:4800);
+}
+function goGal(name,n){
+  const g=gals[name];
+  g.slides[g.idx].classList.remove('active');
+  if(g.dots.children[g.idx])g.dots.children[g.idx].classList.remove('active');
+  g.idx=(n+g.slides.length)%g.slides.length;
+  document.getElementById(name+'Slides').style.transform=`translateX(-${g.idx*100}%)`;
+  g.slides[g.idx].classList.add('active');
+  if(g.dots.children[g.idx])g.dots.children[g.idx].classList.add('active');
+}
+function nextSlide(n){goGal(n,gals[n].idx+1)}
+function prevSlide(n){goGal(n,gals[n].idx-1)}
+initGal('loft','loftDots');
+initGal('suite','suiteDots');
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')}),{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+<script>
+// Disponibilità: date occupate lette dal tracker Antrum (prenotazioni Airbnb, Booking, dirette e blocchi dei calendari)
+(function(){
+  const API='https://script.google.com/macros/s/AKfycbzVWh2PXMxgYzvhUqaHPVS4WTJLdnAr0ra7VG5tqVt6G8WopIbYezJMnJqeHqwLkRaq9g/exec?a=disponibilita';
+  const WA='393474428794', NOMI={loft:'Antrum Loft',suite:'Antrum Suite'};
+  const MESI=['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
+  const GG=['Lu','Ma','Me','Gi','Ve','Sa','Do'];
+  const pad=n=>String(n).padStart(2,'0'), iso=(y,m,d)=>y+'-'+pad(m+1)+'-'+pad(d);
+  const oggi=new Date(), OGGI=iso(oggi.getFullYear(),oggi.getMonth(),oggi.getDate());
+  const S={s:'loft',dati:null,off:0,cin:null,cout:null,err:false};
+  const busy=d=>!!S.dati&&(S.dati[S.s]||[]).some(r=>d>=r[0]&&d<r[1]);           // notte occupata
+  const libero=(a,b)=>!(S.dati[S.s]||[]).some(r=>a<r[1]&&r[0]<b);                // nessuna notte occupata tra a e b
+  const lbl=d=>{const x=new Date(d+'T12:00:00');return x.getDate()+' '+MESI[x.getMonth()].slice(0,3)};
+  const notti=(a,b)=>Math.round((Date.parse(b)-Date.parse(a))/864e5);
+  const nx=d=>{const t=new Date(d+'T12:00:00Z');t.setUTCDate(t.getUTCDate()+1);return t.toISOString().slice(0,10)};
+  const P=()=>S.dati.prezzi||{base:{},min:{},tassa:0,r:[]};
+  const prezzo=k=>{const r=P().r.find(x=>x.s===S.s&&k>=x.da&&k<=x.al);return (r&&r.p)||P().base[S.s]||0};   // prezzo della notte che inizia il giorno k
+  const euro=n=>'€ '+Math.round(n).toLocaleString('it-IT');
+  function mese(off){
+    const y=oggi.getFullYear(),m0=oggi.getMonth()+off,y2=y+Math.floor(m0/12),m=((m0%12)+12)%12;
+    const primo=(new Date(y2,m,1).getDay()+6)%7, giorni=new Date(y2,m+1,0).getDate();
+    let h='<div class="disp-mese"><h4>'+MESI[m]+' '+y2+'</h4><div class="disp-grid">'+GG.map(g=>'<span class="dw">'+g+'</span>').join('');
+    for(let i=0;i<primo;i++)h+='<span></span>';
+    for(let d=1;d<=giorni;d++){
+      const k=iso(y2,m,d);let c='',dis=false;
+      if(k<OGGI){c='pass';dis=true}
+      else if(S.cin&&!S.cout&&k>S.cin){ if(!libero(S.cin,k)){c='occ';dis=true} else if(busy(k))c='solo-out'; }   // partenza possibile anche il giorno in cui arriva un altro ospite
+      else if(busy(k)){c='occ';dis=true}
+      if(k===S.cin||k===S.cout)c='sel';else if(S.cin&&S.cout&&k>S.cin&&k<S.cout)c='mid';
+      h+='<button class="'+c+'" '+(dis?'disabled':'')+' onclick="dispGiorno(\''+k+'\')" aria-label="'+d+' '+MESI[m]+(c==='occ'?', occupato':'')+'">'+d+(c===''||c==='sel'||c==='mid'?'<small>'+(prezzo(k)?Math.round(prezzo(k)):'—')+'</small>':'')+'</button>';
+    }
+    return h+'</div></div>';
+  }
+  function draw(){
+    const el=document.getElementById('dispMesi');
+    document.getElementById('dispPrev').disabled=S.off<=0; document.getElementById('dispNext').disabled=S.off>=11;
+    if(S.err){el.innerHTML='<div class="disp-stato">Calendario non disponibile in questo momento: scrivici su WhatsApp e ti rispondiamo subito.</div>';return}
+    if(!S.dati)return;
+    el.innerHTML=mese(S.off)+mese(S.off+1);
+    const r=document.getElementById('dispRis');
+    if(S.cin&&S.cout){
+      const n=notti(S.cin,S.cout), min=P().min[S.s]||1;
+      let tot=0;for(let k=S.cin;k<S.cout;k=nx(k)){const p=prezzo(k);if(!p){tot=null;break}tot+=p}   // un giorno senza prezzo: prezzo su richiesta
+      r.hidden=false;
+      if(n<min){r.innerHTML='<div><div class="t">Soggiorno minimo '+min+' notti</div><div class="s">Scegli una data di partenza più avanti</div></div>';return}
+      r.innerHTML='<div><div class="t">'+NOMI[S.s]+' · '+n+(n===1?' notte':' notti')+' · '+(tot===null?'prezzo su richiesta':euro(tot))+'</div><div class="s" id="dispDett"></div></div>'+
+        '<input id="dispNome" placeholder="Il tuo nome" autocomplete="name" aria-label="Il tuo nome">'+
+        '<select id="dispOsp" aria-label="Ospiti"><option value="1">1 ospite</option><option value="2" selected>2 ospiti</option></select>'+
+        '<a class="btn-wa" target="_blank" rel="noopener" id="dispWa" href="#">💬 Richiedi su WhatsApp</a>';
+      const upd=()=>{const g=+document.getElementById('dispOsp').value, tassa=(P().tassa||0)*g*n;
+        document.getElementById('dispDett').textContent='Arrivo '+lbl(S.cin)+' → partenza '+lbl(S.cout)+(tassa?' · + tassa di soggiorno '+euro(tassa):'');
+        const nome=(document.getElementById('dispNome').value||'').trim();
+        const msg='Ciao'+(nome?', sono '+nome:'')+'! Vorrei prenotare '+NOMI[S.s]+' dal sito.\n\n'+
+          '📅 Arrivo: '+lbl(S.cin)+'\n📅 Partenza: '+lbl(S.cout)+' ('+n+(n===1?' notte':' notti')+')\n👥 Ospiti: '+g+'\n💶 '+(tot===null?'Prezzo: da confermare':'Totale: '+euro(tot)+(tassa?' + tassa di soggiorno '+euro(tassa):''))+'\n\nÈ disponibile? Grazie!';
+        document.getElementById('dispWa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg)};
+      document.getElementById('dispOsp').onchange=upd;document.getElementById('dispNome').oninput=upd;upd();
+    } else if(S.cin){r.hidden=false;r.innerHTML='<div><div class="t">Arrivo '+lbl(S.cin)+'</div><div class="s">Ora tocca il giorno di partenza</div></div>'}
+    else r.hidden=true;
+  }
+  window.dispGiorno=k=>{
+    if(!S.cin||S.cout||k<=S.cin){ if(busy(k))return; S.cin=k;S.cout=null; }
+    else if(libero(S.cin,k)) S.cout=k;
+    draw();
+  };
+  window.dispStruttura=s=>{S.s=s;S.cin=S.cout=null;document.querySelectorAll('.disp-tabs button').forEach(b=>b.setAttribute('aria-pressed',b.textContent.toLowerCase().includes(s)));draw()};
+  window.dispMese=d=>{S.off=Math.max(0,Math.min(11,S.off+(window.innerWidth<=900?d:d*2)));draw()};
+  fetch(API).then(r=>r.json()).then(j=>{if(!j||!j.loft)throw 0;S.dati=j;
+    draw()})
+    .catch(()=>{S.err=true;draw()});
+})();
+</script>
+</body>
+</html>
