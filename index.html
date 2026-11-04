@@ -588,7 +588,9 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
   const notti=(a,b)=>Math.round((Date.parse(b)-Date.parse(a))/864e5);
   const nx=d=>{const t=new Date(d+'T12:00:00Z');t.setUTCDate(t.getUTCDate()+1);return t.toISOString().slice(0,10)};
   const P=()=>S.dati.prezzi||{base:{},min:{},tassa:0,r:[]};
-  const prezzo=k=>{const r=P().r.find(x=>x.s===S.s&&k>=x.da&&k<=x.al);return (r&&r.p)||P().base[S.s]||0};   // prezzo della notte che inizia il giorno k
+  // ciclo automatico (Enrico, 4/11/2026): ogni 2 giorni tutto il listino sale di 3, poi 5, poi 7 euro e torna al prezzo base; il ciclo parte dal 4/11 al prezzo base
+  const RITOCCO=(()=>{const g=Math.floor((Date.now()+36e5)/864e5)-Math.floor(Date.UTC(2026,10,4)/864e5);return [0,3,5,7][((Math.floor(g/2)%4)+4)%4]})();
+  const prezzo=k=>{const r=P().r.find(x=>x.s===S.s&&k>=x.da&&k<=x.al);const p=(r&&r.p)||P().base[S.s]||0;return p?p+RITOCCO:0};   // prezzo della notte che inizia il giorno k (0 = su richiesta)
   const euro=n=>'€ '+Math.round(n).toLocaleString('it-IT');
   function mese(off){
     const y=oggi.getFullYear(),m0=oggi.getMonth()+off,y2=y+Math.floor(m0/12),m=((m0%12)+12)%12;
