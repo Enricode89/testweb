@@ -617,15 +617,16 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
       let tot=0;for(let k=S.cin;k<S.cout;k=nx(k)){const p=prezzo(k);if(!p){tot=null;break}tot+=p}   // un giorno senza prezzo: prezzo su richiesta
       r.hidden=false;
       if(n<min){r.innerHTML='<div><div class="t">Soggiorno minimo '+min+' notti</div><div class="s">Scegli una data di partenza più avanti</div></div>';return}
-      r.innerHTML='<div><div class="t">'+NOMI[S.s]+' · '+n+(n===1?' notte':' notti')+' · '+(tot===null?'prezzo su richiesta':euro(tot))+'</div><div class="s" id="dispDett"></div></div>'+
+      r.innerHTML='<div><div class="t" id="dispTot"></div><div class="s" id="dispDett"></div></div>'+
         '<input id="dispNome" placeholder="Il tuo nome" autocomplete="name" aria-label="Il tuo nome">'+
         '<select id="dispOsp" aria-label="Ospiti"><option value="1">1 ospite</option><option value="2" selected>2 ospiti</option></select>'+
         '<a class="btn-wa" target="_blank" rel="noopener" id="dispWa" href="#">💬 Richiedi su WhatsApp</a>';
-      const upd=()=>{const g=+document.getElementById('dispOsp').value, tassa=(P().tassa||0)*g*n;
-        document.getElementById('dispDett').textContent='Arrivo '+lbl(S.cin)+' → partenza '+lbl(S.cout)+(tassa?' · + tassa di soggiorno '+euro(tassa):'');
+      const upd=()=>{const g=+document.getElementById('dispOsp').value, tx=P().tassa??3, tassa=tx*g*n, tutto=tot===null?null:tot+tassa;   // totale con tassa di soggiorno (3 € a persona a notte, dal listino dell'app)
+        document.getElementById('dispTot').textContent=NOMI[S.s]+' · '+n+(n===1?' notte':' notti')+' · '+(tutto===null?'prezzo su richiesta':'Totale '+euro(tutto));
+        document.getElementById('dispDett').textContent='Arrivo '+lbl(S.cin)+' → partenza '+lbl(S.cout)+(tassa?(tot===null?' · ':' · soggiorno '+euro(tot)+' + ')+'tassa di soggiorno '+euro(tassa)+' ('+euro(tx)+' × '+g+(g===1?' ospite':' ospiti')+' × '+n+(n===1?' notte':' notti')+')':'');
         const nome=(document.getElementById('dispNome').value||'').trim();
         const msg='Ciao'+(nome?', sono '+nome:'')+'! Vorrei prenotare '+NOMI[S.s]+' dal sito.\n\n'+
-          '📅 Arrivo: '+lbl(S.cin)+'\n📅 Partenza: '+lbl(S.cout)+' ('+n+(n===1?' notte':' notti')+')\n👥 Ospiti: '+g+'\n💶 '+(tot===null?'Prezzo: da confermare':'Totale: '+euro(tot)+(tassa?' + tassa di soggiorno '+euro(tassa):''))+'\n\nÈ disponibile? Grazie!';
+          '📅 Arrivo: '+lbl(S.cin)+'\n📅 Partenza: '+lbl(S.cout)+' ('+n+(n===1?' notte':' notti')+')\n👥 Ospiti: '+g+'\n💶 '+(tutto===null?'Prezzo: da confermare'+(tassa?' + tassa di soggiorno '+euro(tassa):''):'Totale: '+euro(tutto)+(tassa?' (soggiorno '+euro(tot)+' + tassa di soggiorno '+euro(tassa)+')':''))+'\n\nÈ disponibile? Grazie!';
         document.getElementById('dispWa').href='https://wa.me/'+WA+'?text='+encodeURIComponent(msg)};
       document.getElementById('dispOsp').onchange=upd;document.getElementById('dispNome').oninput=upd;upd();
     } else if(S.cin){r.hidden=false;r.innerHTML='<div><div class="t">Arrivo '+lbl(S.cin)+'</div><div class="s">Ora tocca il giorno di partenza</div></div>'}
