@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://antrumloftandsuite.com/sitemap.xml
+Sitemap: https://antrumapartments.com/sitemap.xml
