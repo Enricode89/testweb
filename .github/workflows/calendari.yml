@@ -1,0 +1,45 @@
+# Calendari iCal delle prenotazioni DIRETTE per Airbnb e Booking (Enrico, 5/11/2026).
+# Ogni 15 minuti scarica dallo script dell'app le date delle dirette e aggiorna
+# calendario/loft.ics e calendario/suite.ics sul sito (antrumapartments.com/calendario/...).
+# Solo date, nessun nome. Scrive solo se qualcosa e' cambiato.
+name: Calendari dirette
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+jobs:
+  aggiorna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scarica i calendari
+        env:
+          API: https://script.google.com/macros/s/AKfycbzVWh2PXMxgYzvhUqaHPVS4WTJLdnAr0ra7VG5tqVt6G8WopIbYezJMnJqeHqwLkRaq9g/exec
+          K_LOFT: ${{ secrets.ICAL_K_LOFT }}
+          K_SUITE: ${{ secrets.ICAL_K_SUITE }}
+        run: |
+          mkdir -p calendario
+          [ -n "$K_LOFT" ] && [ -n "$K_SUITE" ] || { echo "Mancano i segreti ICAL_K_LOFT / ICAL_K_SUITE"; exit 1; }
+          for s in loft suite; do
+            k=$([ "$s" = loft ] && echo "$K_LOFT" || echo "$K_SUITE")
+            curl -sfL "$API?a=ical&s=$s&k=$k" -o "/tmp/$s.ics"
+            grep -q 'BEGIN:VCALENDAR' "/tmp/$s.ics" || { echo "Calendario $s non valido"; exit 1; }
+            # confronto senza DTSTAMP (cambia a ogni richiesta)
+            if [ ! -f "calendario/$s.ics" ] || ! diff -q <(grep -v '^DTSTAMP' "/tmp/$s.ics") <(grep -v '^DTSTAMP' "calendario/$s.ics") >/dev/null; then
+              cp "/tmp/$s.ics" "calendario/$s.ics"
+            fi
+          done
+      - name: Pubblica se cambiati
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add calendario
+          if git diff --cached --quiet; then echo "Nessun cambiamento"; exit 0; fi
+          git config user.name "Calendari Antrum"
+          git config user.email "actions@users.noreply.github.com"
+          git commit -m "Calendari dirette aggiornati"
+          git push
+          gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
