@@ -601,7 +601,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     for(let d=1;d<=giorni;d++){
       const k=iso(y2,m,d);let c='',dis=false;
       if(k<OGGI){c='pass';dis=true}
-      else if(S.cin&&!S.cout&&k>S.cin){ if(!libero(S.cin,k)){c='occ';dis=true} else if(busy(k))c='solo-out'; }   // partenza possibile anche il giorno in cui arriva un altro ospite
+      else if(S.cin&&k>S.cin&&libero(S.cin,k)){ if(busy(k))c='solo-out'; }   // partenza possibile anche il giorno in cui arriva un altro ospite
       else if(busy(k)){c='occ';dis=true}
       if(k===S.cin||k===S.cout)c='sel';else if(S.cin&&S.cout&&k>S.cin&&k<S.cout)c='mid';
       h+='<button class="'+c+'" '+(dis?'disabled':'')+' onclick="dispGiorno(\''+k+'\')" aria-label="'+d+' '+MESI[m]+(c==='occ'?', occupato':'')+'">'+d+(c===''||c==='sel'||c==='mid'?'<small>'+(prezzo(k)?Math.round(prezzo(k)):'—')+'</small>':'')+'</button>';
@@ -620,7 +620,7 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
       let tot=0;for(let k=S.cin;k<S.cout;k=nx(k)){const p=prezzo(k);if(!p){tot=null;break}tot+=p}   // un giorno senza prezzo: prezzo su richiesta
       r.hidden=false;
       if(n<min){r.innerHTML='<div><div class="t">Soggiorno minimo '+min+' notti</div><div class="s">Scegli una data di partenza più avanti</div></div>';return}
-      r.innerHTML='<div><div class="t" id="dispTot"></div><div class="s" id="dispDett"></div></div>'+
+      r.innerHTML='<div><div class="t" id="dispTot"></div><div class="s" id="dispDett"></div><div class="s">Tocca un altro giorno per cambiare la partenza</div></div>'+
         '<input id="dispNome" placeholder="Il tuo nome" autocomplete="name" aria-label="Il tuo nome">'+
         '<select id="dispOsp" aria-label="Ospiti"><option value="1">1 ospite</option><option value="2" selected>2 ospiti</option></select>'+
         '<a class="btn-wa" target="_blank" rel="noopener" id="dispWa" href="#">💬 Richiedi su WhatsApp</a>';
@@ -635,9 +635,10 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
     } else if(S.cin){r.hidden=false;r.innerHTML='<div><div class="t">Arrivo '+lbl(S.cin)+'</div><div class="s">Ora tocca il giorno di partenza</div></div>'}
     else r.hidden=true;
   }
+  // 1° tocco: arrivo + partenza automatica dopo il minimo di notti (di solito il giorno dopo); tocchi successivi più avanti allungano o accorciano il soggiorno
   window.dispGiorno=k=>{
-    if(!S.cin||S.cout||k<=S.cin){ if(busy(k))return; S.cin=k;S.cout=null; }
-    else if(libero(S.cin,k)) S.cout=k;
+    if(S.cin&&k>S.cin&&libero(S.cin,k)){ S.cout=k; }
+    else { if(busy(k))return; S.cin=k; let c=k; for(let i=0;i<(P().min[S.s]||1);i++)c=nx(c); S.cout=libero(k,c)?c:null; }
     draw();
   };
   window.dispStruttura=s=>{S.s=s;S.cin=S.cout=null;document.querySelectorAll('.disp-tabs button').forEach(b=>b.setAttribute('aria-pressed',b.textContent.toLowerCase().includes(s)));draw()};
