@@ -27,6 +27,8 @@ jobs:
             k=$([ "$s" = loft ] && echo "$K_LOFT" || echo "$K_SUITE")
             curl -sfL "$API?a=ical&s=$s&k=$k" -o "/tmp/$s.ics"
             grep -q 'BEGIN:VCALENDAR' "/tmp/$s.ics" || { echo "Calendario $s non valido"; exit 1; }
+            # formato minimo come Booking (Airbnb rifiuta METHOD / X-WR-CALNAME / TRANSP)
+            sed -i -e '/^METHOD:/d' -e '/^X-WR-CALNAME:/d' -e '/^TRANSP:/d' -e 's/^PRODID:[^\r]*/PRODID:-\/\/Antrum\/\/Calendario\/\/IT/' -e 's/^SUMMARY:[^\r]*/SUMMARY:Not available/' "/tmp/$s.ics"
             # confronto senza DTSTAMP (cambia a ogni richiesta)
             if [ ! -f "calendario/$s.ics" ] || ! diff -q <(grep -v '^DTSTAMP' "/tmp/$s.ics") <(grep -v '^DTSTAMP' "calendario/$s.ics") >/dev/null; then
               cp "/tmp/$s.ics" "calendario/$s.ics"
