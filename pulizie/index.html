@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Antrum · Pulizie</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#121A21">
+<link rel="icon" href="/checkin/icon-192.png">
+<link rel="apple-touch-icon" href="/checkin/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Pulizie">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#121A21;--ground:#F4F5F2;--card:#fff;--muted:#5E6670;--line:#E3E5E0;--green:#1E7A45;--green-t:#E2F3E8;--amber:#8A5A00;--amber-t:#FFF1D6;--tasso:#2F6FD1;--tasso-t:#E3ECFA;--mas:#8A4FBF;--mas-t:#F0E6F8}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ground);color:var(--ink);font:16px/1.45 'Plus Jakarta Sans',system-ui,-apple-system,sans-serif;padding:0 16px calc(28px + env(safe-area-inset-bottom))}
+.wrap{max-width:520px;margin:0 auto}
+header{padding:calc(18px + env(safe-area-inset-top)) 2px 14px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+header b{font-size:13px;letter-spacing:.08em}
+header button{border:1px solid var(--line);background:#fff;border-radius:12px;height:40px;padding:0 14px;font:inherit;font-size:14px;font-weight:700;color:var(--ink)}
+.hero{background:var(--ink);color:#fff;border-radius:22px;padding:20px 20px 18px}
+.hero .k{font-size:13px;opacity:.75;font-weight:600}
+.hero .n{font-size:56px;font-weight:800;line-height:1;margin:6px 0 4px}
+.hero .s{font-size:14px;opacity:.8}
+.split{display:flex;gap:8px;margin-top:14px}
+.split div{flex:1;background:rgba(255,255,255,.08);border-radius:14px;padding:10px 12px;font-size:13px}
+.split b{display:block;font-size:20px}
+h2{font-size:15px;margin:22px 4px 10px;display:flex;justify-content:space-between;align-items:baseline}
+h2 span{font-size:13px;color:var(--muted);font-weight:600}
+.list{display:grid;gap:8px}
+.item{background:var(--card);border-radius:16px;padding:14px;display:flex;align-items:center;gap:14px}
+.day{width:52px;flex-shrink:0;text-align:center;border-radius:12px;padding:6px 0;background:var(--ground)}
+.day small{display:block;font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase}
+.day b{display:block;font-size:22px;line-height:1.1}
+.day i{display:block;font-style:normal;font-size:11px;font-weight:700;color:var(--muted)}
+.t{font-weight:800;font-size:16px}
+.m{font-size:13px;color:var(--muted);font-weight:600}
+.tag{display:inline-block;font-size:11px;font-weight:800;padding:3px 8px;border-radius:999px;margin-left:6px;vertical-align:1px}
+.oggi{background:var(--amber-t);color:var(--amber)}
+.tasso .day{background:var(--tasso-t)} .tasso .day b{color:var(--tasso)}
+.mas .day{background:var(--mas-t)} .mas .day b{color:var(--mas)}
+.done .item{padding:10px 14px}
+.done .t{font-size:15px}
+.ok{width:28px;height:28px;border-radius:50%;background:var(--green-t);color:var(--green);display:grid;place-items:center;flex-shrink:0}
+.empty{background:var(--card);border-radius:16px;padding:18px;text-align:center;color:var(--muted);font-weight:600}
+.msg{margin-top:30vh;text-align:center;color:var(--muted);font-weight:600}
+.seg{display:flex;background:#E9EBE6;border-radius:14px;padding:4px;margin-top:16px}
+.seg button{flex:1;border:0;background:transparent;border-radius:10px;height:40px;font:inherit;font-size:14px;font-weight:700;color:var(--muted)}
+.seg button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.calhead{display:flex;align-items:center;justify-content:space-between;margin:16px 0 10px}
+.calhead div{text-align:center}.calhead b{display:block;font-size:17px;text-transform:capitalize}.calhead span{font-size:13px;color:var(--muted);font-weight:600}
+.calhead button{width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:22px;font-weight:700;color:var(--ink)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;background:var(--card);border-radius:18px;padding:10px 8px}
+.dow{text-align:center;font-size:11px;font-weight:800;color:var(--muted);padding-bottom:4px}
+.cella{min-height:58px;border:0;background:transparent;border-radius:10px;padding:4px 1px;display:flex;flex-direction:column;align-items:center;gap:2px;font:inherit;color:var(--ink)}
+.cella b{font-size:14px;font-weight:700}.cella.vuota b{color:#9AA0A6;font-weight:600}
+.cella.oggi b{background:var(--ink);color:#fff;border-radius:999px;width:26px;height:26px;display:grid;place-items:center}
+.cella.sel{background:var(--ground)}
+.pill{font-size:9.5px;font-weight:800;border-radius:6px;padding:2px 3px;width:100%;text-align:center;white-space:nowrap;overflow:hidden}
+.pill.tasso{background:var(--tasso);color:#fff}.pill.mas{background:var(--mas);color:#fff}
+.pill.fatta{background:var(--green-t);color:var(--green)}
+.mese{border:0;width:100%;font:inherit;color:var(--ink)}.num{font-size:24px;font-weight:800}
+.nbox{display:flex;gap:12px;align-items:center;background:#FFF4D6;color:#5A4300;border-radius:16px;padding:14px 16px;margin-bottom:12px;font-size:14px}
+.nbox b{font-size:15px}.nbox .m{color:#6B5520;margin-top:2px}
+.nbtn{border:0;background:var(--ink);color:#fff;border-radius:12px;height:42px;padding:0 16px;font:inherit;font-weight:800;flex-shrink:0}
+.more{width:100%;margin-top:8px;border:1px dashed var(--line);background:transparent;border-radius:14px;height:44px;font:inherit;font-weight:700;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap" id="app"><p class="msg">…</p></div>
+<script>
+const API = 'https://script.google.com/macros/s/AKfycbzVWh2PXMxgYzvhUqaHPVS4WTJLdnAr0ra7VG5tqVt6G8WopIbYezJMnJqeHqwLkRaq9g/exec';
+const qs = new URLSearchParams(location.search);
+// la chiave resta anche sul telefono: aperta dalla schermata Home o da una notifica funziona lo stesso
+let K = qs.get('k') || '';
+try { if (K) localStorage.setItem('pul_k', K); else K = localStorage.getItem('pul_k') || ''; } catch (e) {}
+const NOMI = { loft: 'Pulizia via Tasso', suite: 'Pulizia via Masuccio' };
+const CLS = { loft: 'tasso', suite: 'mas' };
+const ORA = { loft: '10:00', suite: '11:00' };          // check-out: da quest'ora la casa è libera
+const GG = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'];
+const MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
+const MB = ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'];
+const P = d => new Date(d + 'T12:00:00Z');
+const oggi = () => new Date().toLocaleDateString('sv', { timeZone: 'Europe/Rome' });
+const $app = document.getElementById('app');
+let D = null, tutte = false, vista = 'elenco', calM = null, calSel = null;
+try { vista = localStorage.getItem('pul_vista') || 'elenco'; } catch (e) {}
+const addM = (m, n) => { const d = P(m + '-15'); d.setUTCMonth(d.getUTCMonth() + n); return d.toISOString().slice(0, 7); };
+function setVista(v) { vista = v; try { localStorage.setItem('pul_vista', v); } catch (e) {} render(); }
+
+const riga = (x, fatta) => {
+  const d = P(x.d), t = oggi();
+  const quando = x.d === t ? '<span class="tag oggi">OGGI</span>' : '';
+  const sub = fatta ? GG[d.getUTCDay()] + ' ' + d.getUTCDate() + ' ' + MB[d.getUTCMonth()]
+    : 'Libera dalle ' + ORA[x.s] + (x.arrivo ? ' · nuovi ospiti in arrivo lo stesso giorno' : '');
+  return fatta
+    ? `<div class="item ${CLS[x.s]}"><span class="ok">✓</span><div style="flex:1"><div class="t">${NOMI[x.s]}</div><div class="m">${sub}</div></div></div>`
+    : `<div class="item ${CLS[x.s]}"><div class="day"><small>${GG[d.getUTCDay()]}</small><b>${d.getUTCDate()}</b><i>${MB[d.getUTCMonth()]}</i></div>
+        <div style="flex:1;min-width:0"><div class="t">${NOMI[x.s]}${quando}</div><div class="m">${sub}</div></div></div>`;
+};
+
+function render() {
+  const t = oggi(), mese = t.slice(0, 7);
+  const prec = (() => { const d = P(mese + '-15'); d.setUTCMonth(d.getUTCMonth() - 1); return d.toISOString().slice(0, 7); })();
+  const fatte = D.pulizie.filter(x => x.d < t).sort((a, b) => b.d.localeCompare(a.d));
+  const daFare = D.pulizie.filter(x => !fatte.includes(x)).sort((a, b) => a.d.localeCompare(b.d));
+  const nM = fatte.filter(x => x.d.startsWith(mese)), nP = fatte.filter(x => x.d.startsWith(prec));
+  const per = s => nM.filter(x => x.s === s).length;
+  const vis = tutte ? daFare : daFare.slice(0, 12);
+  $app.innerHTML = `<header><b>ANTRUM · PULIZIE</b><button onclick="carica()">Aggiorna</button></header>
+    <div id="notif"></div>
+    <section class="hero"><div class="k">Pulizie fatte a ${MESI[+mese.slice(5) - 1]}</div><div class="n">${nM.length}</div>
+      <div class="s">${nP.length} a ${MESI[+prec.slice(5) - 1]}</div>
+      <div class="split"><div>Via Tasso<b>${per('loft')}</b></div><div>Via Masuccio<b>${per('suite')}</b></div></div></section>
+    <div class="seg"><button aria-pressed="${vista === 'elenco'}" onclick="setVista('elenco')">Elenco</button><button aria-pressed="${vista === 'cal'}" onclick="setVista('cal')">Calendario</button></div>
+    ${vista === 'cal' ? calendario(t) : `<h2>Da fare <span>${daFare.length}</span></h2>
+    <div class="list">${vis.length ? vis.map(x => riga(x, false)).join('') : '<div class="empty">Nessuna pulizia in programma</div>'}</div>
+    ${daFare.length > vis.length ? `<button class="more" onclick="tutte=true;render()">Mostra tutte (${daFare.length})</button>` : ''}
+    <h2>Già fatte a ${MESI[+mese.slice(5) - 1]} <span>${nM.length}</span></h2>
+    <div class="list done">${nM.length ? nM.map(x => riga(x, true)).join('') : '<div class="empty">Ancora nessuna questo mese</div>'}</div>
+    ${storico(fatte, mese)}`}`;
+}
+
+// mesi precedenti: quante pulizie per mese (tocca per vederlo nel calendario)
+function storico(fatte, mese) {
+  const mesi = [...new Set(fatte.map(x => x.d.slice(0, 7)))].filter(m => m < mese).sort().reverse();
+  if (!mesi.length) return '';
+  const tot = fatte.filter(x => x.d.slice(0, 7) < mese).length;
+  return `<h2>Mesi precedenti <span>${tot} in tutto</span></h2><div class="list">${mesi.map(m => {
+    const q = fatte.filter(x => x.d.startsWith(m)), n = s => q.filter(x => x.s === s).length;
+    return `<button class="item mese" onclick="calM='${m}';calSel=null;setVista('cal');scrollTo(0,0)"><div style="flex:1;text-align:left"><div class="t" style="text-transform:capitalize">${MESI[+m.slice(5) - 1]} ${m.slice(0, 4)}</div>
+      <div class="m">Via Tasso ${n('loft')} · Via Masuccio ${n('suite')}</div></div><b class="num">${q.length}</b></button>`;
+  }).join('')}</div>`;
+}
+// calendario classico: un mese alla volta, lunedì-domenica; nei giorni di check-out le pulizie da fare (colorate) o fatte (✓)
+function calendario(t) {
+  const m = calM || t.slice(0, 7), primo = P(m + '-01'), giorni = new Date(Date.UTC(+m.slice(0, 4), +m.slice(5), 0)).getUTCDate();
+  const vuoti = (primo.getUTCDay() + 6) % 7, delMese = D.pulizie.filter(x => x.d.startsWith(m));
+  let celle = '';
+  for (let i = 0; i < vuoti; i++) celle += '<div></div>';
+  for (let g = 1; g <= giorni; g++) {
+    const d = m + '-' + String(g).padStart(2, '0'), q = delMese.filter(x => x.d === d);
+    const pill = q.map(x => `<span class="pill ${CLS[x.s]}${x.d < t ? ' fatta' : ''}">${x.d < t ? '✓ ' : ''}${x.s === 'loft' ? 'Tasso' : 'Masuc.'}</span>`).join('');
+    celle += `<button class="cella${d === t ? ' oggi' : ''}${d === calSel ? ' sel' : ''}${q.length ? '' : ' vuota'}" ${q.length ? `onclick="calSel='${d}';render()"` : 'disabled'}><b>${g}</b>${pill}</button>`;
+  }
+  const sel = calSel && calSel.startsWith(m) ? D.pulizie.filter(x => x.d === calSel) : [];
+  const fatteM = delMese.filter(x => x.d < t).length, daM = delMese.length - fatteM;
+  return `<div class="calhead"><button onclick="calM=addM('${m}',-1);calSel=null;render()" aria-label="Mese precedente">‹</button>
+      <div><b>${MESI[+m.slice(5) - 1]} ${m.slice(0, 4)}</b><span>${fatteM} fatte · ${daM} da fare</span></div>
+      <button onclick="calM=addM('${m}',1);calSel=null;render()" aria-label="Mese successivo">›</button></div>
+    <div class="cal"><div class="dow">L</div><div class="dow">M</div><div class="dow">M</div><div class="dow">G</div><div class="dow">V</div><div class="dow">S</div><div class="dow">D</div>${celle}</div>
+    <div class="list" style="margin-top:12px">${sel.length ? sel.map(x => riga(x, x.d < t)).join('') : '<div class="empty" style="font-size:14px">Tocca un giorno colorato per i dettagli</div>'}</div>`;
+}
+
+async function carica() {
+  if (!K) { $app.innerHTML = '<p class="msg">Link non valido.</p>'; return; }
+  try {
+    const r = await fetch(API + '?a=pulizie&k=' + encodeURIComponent(K)).then(x => x.json());
+    if (!r.ok) throw new Error(r.errore || 'Link non valido');
+    D = r; render(); statoNotifiche();
+  } catch (e) {
+    if (!D) $app.innerHTML = `<p class="msg">${e.message === 'Link non valido' ? 'Link non valido. Chiedi un link nuovo.' : 'Non riesco a caricare le pulizie. Riprova tra poco.'}</p>`;
+  }
+}
+// ---- notifiche: nuova pulizia, annullata, spostata ----
+const isIOS = /iP(hone|ad|od)/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+const pushOk = 'serviceWorker' in navigator && 'PushManager' in window && 'Notification' in window;
+let NOTIF = '';
+async function statoNotifiche() {
+  const el = document.getElementById('notif'); if (!el) return;
+  let attive = false;
+  if (pushOk && Notification.permission === 'granted') {
+    try { const reg = await navigator.serviceWorker.getRegistration('./'); attive = !!(reg && await reg.pushManager.getSubscription()); } catch (e) {}
+  }
+  const box = (t, s, btn) => `<div class="nbox"><div style="flex:1"><b>${t}</b><div class="m">${s}</div></div>${btn || ''}</div>`;
+  if (attive) { el.innerHTML = ''; return; }
+  if (isIOS && !standalone) el.innerHTML = box('🔔 Ricevi le notifiche', 'Tocca <b>Condividi</b> ⬆︎ in basso, poi <b>Aggiungi alla schermata Home</b>. Apri “Pulizie” dalla Home e premi Attiva notifiche.');
+  else if (!pushOk) el.innerHTML = box('🔔 Notifiche non disponibili', 'Questo browser non riceve notifiche: apri il link con Chrome o Safari aggiornati.');
+  else if (Notification.permission === 'denied') el.innerHTML = box('🔕 Notifiche bloccate', 'Riattivale dalle impostazioni del telefono per questo sito, poi riapri la pagina.');
+  else el.innerHTML = box('🔔 Ricevi le notifiche', NOTIF || 'Ti avviso quando c’è una nuova pulizia o cambia una data.', '<button class="nbtn" onclick="attivaNotifiche()">Attiva</button>');
+}
+const b64 = s => { const p = '='.repeat((4 - s.length % 4) % 4), r = atob((s + p).replace(/-/g, '+').replace(/_/g, '/')); return Uint8Array.from([...r].map(c => c.charCodeAt(0))); };
+async function attivaNotifiche() {
+  try {
+    NOTIF = 'Un attimo…'; statoNotifiche();
+    if (await Notification.requestPermission() !== 'granted') { NOTIF = ''; return statoNotifiche(); }
+    const reg = await navigator.serviceWorker.register('sw.js', { scope: './' });
+    await navigator.serviceWorker.ready;
+    let sub = await reg.pushManager.getSubscription();
+    if (!sub) sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: b64(D.vapid) });
+    const r = await fetch(API, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+      body: JSON.stringify({ azione: 'pulizieIscrivi', k: K, sub: sub.toJSON(), device: navigator.userAgent }) }).then(x => x.json());
+    if (!r.ok) throw new Error(r.errore || 'non riuscito');
+    NOTIF = ''; statoNotifiche();
+  } catch (e) { NOTIF = 'Non riuscito (' + (e.message || e) + '). Riprova.'; statoNotifiche(); }
+}
+carica();
+document.addEventListener('visibilitychange', () => { if (!document.hidden && D) carica(); });
+</script>
+</body>
+</html>
