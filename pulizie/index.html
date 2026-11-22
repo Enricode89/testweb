@@ -115,7 +115,7 @@ function render() {
   $app.innerHTML = `<header><b>ANTRUM · PULIZIE</b><button onclick="carica()">Aggiorna</button></header>
     <div id="notif"></div>
     <section class="hero"><div class="k">Pulizie fatte a ${MESI[+mese.slice(5) - 1]}</div><div class="n">${nM.length}</div>
-      <div class="s">${nP.length} a ${MESI[+prec.slice(5) - 1]}</div>
+      <div class="s">${fatte.length ? (fatte.some(x => x.d < mese) ? nP.length + ' a ' + MESI[+prec.slice(5) - 1] : 'Il conteggio parte dalla tua prima pulizia') : daFare.length ? 'Prima pulizia: ' + GG[P(daFare[0].d).getUTCDay()] + ' ' + P(daFare[0].d).getUTCDate() + ' ' + MB[P(daFare[0].d).getUTCMonth()] : ''}</div>
       <div class="split"><div>Via Tasso<b>${per('loft')}</b></div><div>Via Masuccio<b>${per('suite')}</b></div></div></section>
     <div class="seg"><button aria-pressed="${vista === 'elenco'}" onclick="setVista('elenco')">Elenco</button><button aria-pressed="${vista === 'cal'}" onclick="setVista('cal')">Calendario</button></div>
     ${vista === 'cal' ? calendario(t) : `<h2>Da fare <span>${daFare.length}</span></h2>
